@@ -1,24 +1,22 @@
 import './App.css';
-import Navbar from './components/Landing/Navbar'
+import {Switch,Route, Redirect} from 'react-router-dom';
+
 import Landing from './pages/Landing';
 import Blog from './pages/Blog';
-import Footer from './components/Landing/Footer';
-import Article from './components/Landing/Article';
-import About from './components/Landing/About';
-import Gallery from './components/Landing/Gallery';
-import Contact from './components/Landing/Contact';
+import Navbar from './components/Landing/Navbar'
+import Gallery from './components/Landing/Gallery'
+
 
 
 function App() {
   return (
     <div className="App">
-     <Navbar />
-     <Landing />
-     <Article />
-     <About />
-     <Gallery />
-     <Contact />
-     <Footer />
+      <Navbar />
+     <Switch>
+      {/* <Route exact path="/gallery" component={Gallery} /> */}
+      <Route exact path="/" component={Landing} />
+      <Route path="/blog" component={Blog} />
+     </Switch>
     </div>
   );
 }
